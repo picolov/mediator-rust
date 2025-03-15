@@ -60,8 +60,10 @@ jobs:
             use-tarpaulin: true
     runs-on: ${{ matrix.os }}
     steps:
-      - name: Test Binary Build
-        uses: Reloaded-Project/devops-rust-lightweight-binary@v1
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Binary Build
+        uses: picolov/devops-rust-lightweight-binary@v1
         with:
           target: ${{ matrix.target }}
           use-pgo: ${{ matrix.use-pgo }}
