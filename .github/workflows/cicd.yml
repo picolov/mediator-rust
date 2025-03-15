@@ -62,6 +62,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+      - name: Checkout rumqtt to libs/
+        run: git clone https://github.com/picolov/rumqtt.git libs/rumqtt
       - name: Binary Build
         uses: picolov/devops-rust-lightweight-binary@v1
         with:
