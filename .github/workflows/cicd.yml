@@ -28,7 +28,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
+      - name: Clone rumqtt to libs/
+        run: git clone https://github.com/picolov/rumqtt.git libs/rumqtt
       - name: Get the release version from the tag
         shell: bash
         run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
